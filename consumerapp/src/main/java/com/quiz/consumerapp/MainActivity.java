@@ -1,21 +1,20 @@
-package com.quiz.mynotesapp;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.quiz.consumerapp;
 
 import android.content.Context;
 import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.view.View;
 import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -27,7 +26,6 @@ import java.util.concurrent.Executors;
 
 import adapter.NoteAdapter;
 import db.DatabaseContract;
-import db.NoteHelper;
 import entity.Note;
 import helper.MappingHelper;
 
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements LoadNotesCallback
         setContentView(R.layout.activity_main);
 
         if (getSupportActionBar() != null)
-            getSupportActionBar().setTitle("Notes");
+            getSupportActionBar().setTitle("Consumer Notes");
 
         progressBar = findViewById(R.id.progressbar);
         rvNotes = findViewById(R.id.rv_notes);

@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quiz.mynotesapp.CustomOnItemClickListener;
-import com.quiz.mynotesapp.NoteAddUpdateActivity;
-import com.quiz.mynotesapp.R;
+import com.quiz.consumerapp.CustomOnItemClickListener;
+import com.quiz.consumerapp.NoteAddUpdateActivity;
+import com.quiz.consumerapp.R;
 
 import java.util.ArrayList;
 
@@ -56,13 +56,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
     @NonNull
     @Override
-    public NoteAdapter.NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note, parent, false);
         return new NoteViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         holder.tvTitle.setText(listNotes.get(position).getTitle());
         holder.tvDate.setText(listNotes.get(position).getDate());
         holder.tvDescription.setText(listNotes.get(position).getDescription());

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.quiz.mynotesapp">
+    package="com.quiz.consumerapp">
 
-    <permission android:name="com.quiz.mynotesapp.READ_DATABASE" android:protectionLevel="normal"/>
-    <permission android:name="com.quiz.mynotesapp.WRITE_DATABASE" android:protectionLevel="normal"/>
+    <uses-permission android:name="com.quiz.mynotesapp.READ_DATABASE" />
+    <uses-permission android:name="com.quiz.mynotesapp.WRITE_DATABASE" />
 
     <application
         android:allowBackup="true"
@@ -12,18 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <provider
-            android:name="provider.NoteProvider"
-            android:authorities="com.quiz.mynotesapp"
-            android:enabled="true"
-            android:exported="true"
-            android:readPermission="com.quiz.mynotesapp.READ_DATABASE"
-            android:writePermission="com.quiz.mynotesapp.WRITE_DATABASE">
-
-
-        </provider>
-
-        <activity android:name=".NoteAddUpdateActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NoteAddUpdateActivity" />
     </application>
+
+    <queries>
+        <package android:name="com.quiz.mynotesapp" />
+    </queries>
 
 </manifest>
